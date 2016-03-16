@@ -1,0 +1,13 @@
+{% block campaignchain_operation_social_media_schedule_widget %}
+    {% spaceless %}
+        {% stylesheets '@campaignchain_operation_social_media_schedule_css' %}
+        <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+        {% endstylesheets %}
+        {% include 'CampaignChainCoreBundle:Operation:field_header.html.twig' %}
+        <h4>Locations</h4>
+        {{ form_row(form.locations, { 'widget_col': 12}) }}
+        <h4>Message</h4>
+        {{ form_row(form.message, { 'widget_col': 12}) }}
+        {% include 'CampaignChainCoreBundle:Operation:field_footer.html.twig' %}
+    {% endspaceless %}
+{% endblock %}

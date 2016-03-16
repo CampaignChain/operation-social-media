@@ -1,0 +1,10 @@
+
+modules:
+    campaignchain-social-media-schedule:
+        display_name: Post identical content to social media
+        description: Schedule the same content to be posted on various social media channels.
+        services:
+            job: campaignchain.job.operation.social_media.schedule
+            report: campaignchain.job.report.social_media.schedule
+        params: 
+            owns_location: false

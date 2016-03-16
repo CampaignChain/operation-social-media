@@ -1,0 +1,13 @@
+parameters:
+    campaignchain.operation.campaignchain.social_media.schedule:
+        bundle_name: "campaignchain/operation-social-media"
+        module_identifier: "campaignchain-social-media-schedule"
+        form_type: "CampaignChain\\Operation\\SocialMediaBundle\\Form\\Type\\SocialMediaScheduleOperationType"
+
+services:
+    campaignchain.job.operation.campaignchain.social_media.schedule:
+        class: CampaignChain\Operation\SocialMediaBundle\Job\SocialMediaSchedule
+        arguments: [ @doctrine.orm.entity_manager, @service_container ]
+    campaignchain.operation.social_media.schedule:
+        class: CampaignChain\Operation\SocialMediaBundle\EntityService\SocialMediaSchedule
+        arguments: [ @doctrine.orm.entity_manager ]

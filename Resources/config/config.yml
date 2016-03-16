@@ -1,0 +1,12 @@
+# Please add the global configuration options for your module here
+assetic:
+    bundles:
+        - CampaignChainOperationSocialMediaBundle
+    assets:
+        campaignchain_operation_social_media_schedule_css:
+            inputs:
+                - '@CampaignChainOperationSocialMediaBundle/Resources/public/css/social_media_schedule.css'
+twig:
+    form:
+        resources:
+            - 'CampaignChainOperationSocialMediaBundle:Form:fields.html.twig'
