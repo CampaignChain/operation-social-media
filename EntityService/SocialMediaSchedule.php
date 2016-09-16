@@ -30,6 +30,17 @@ class SocialMediaSchedule implements OperationServiceInterface
         $this->em = $em;
     }
 
+    public function getContent(Operation $operation)
+    {
+        return $this->getSocialMediaScheduleByOperation($operation->getId());
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     * @throws \Exception
+     * @deprecated Use getContent(Operation $operation) instead.
+     */
     public function getSocialMediaScheduleByOperation($id){
         $status = $this->em->getRepository('CampaignChainOperationSocialMediaBundle:SocialMediaSchedule')
             ->findOneByOperation($id);
