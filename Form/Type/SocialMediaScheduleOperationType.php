@@ -3,6 +3,7 @@
 namespace CampaignChain\Operation\SocialMediaBundle\Form\Type;
 
 use CampaignChain\CoreBundle\Form\Type\OperationType;
+use CampaignChain\TextareaCountFormTypeBundle\Form\Type\TextareaCountType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Doctrine\ORM\EntityRepository;
@@ -61,7 +62,7 @@ class SocialMediaScheduleOperationType extends OperationType
                 )
             ));
         $builder
-            ->add('message', 'textarea', array(
+            ->add('message', TextareaCountType::class, array(
                 'label' => false,
                 'attr' => array(
                     'placeholder' => 'Compose message...',

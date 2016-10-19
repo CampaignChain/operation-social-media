@@ -12,6 +12,7 @@
         }
     ],
     "require": {
+        "campaignchain/form-type-textarea-count": "dev-master"
     },
     "autoload": {
         "psr-4": { "CampaignChain\\Operation\\SocialMediaBundle\\": "" }
