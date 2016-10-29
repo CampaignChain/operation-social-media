@@ -7,7 +7,7 @@ parameters:
 services:
     campaignchain.job.operation.campaignchain.social_media.schedule:
         class: CampaignChain\Operation\SocialMediaBundle\Job\SocialMediaSchedule
-        arguments: [ @doctrine.orm.entity_manager, @service_container ]
+        arguments: [ @doctrine, @service_container ]
     campaignchain.operation.social_media.schedule:
         class: CampaignChain\Operation\SocialMediaBundle\EntityService\SocialMediaSchedule
-        arguments: [ @doctrine.orm.entity_manager ]
+        arguments: [ @doctrine ]

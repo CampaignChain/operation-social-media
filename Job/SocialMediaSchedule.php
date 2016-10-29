@@ -17,7 +17,7 @@
 
 namespace CampaignChain\Operation\SocialMediaBundle\Job;
 
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ManagerRegistry;
 use CampaignChain\CoreBundle\Job\JobActionInterface;
 use Guzzle\Http\Client;
 use GuzzleHttp\Exception\RequestException;
@@ -30,9 +30,9 @@ class SocialMediaSchedule implements JobActionInterface
 
     protected $message;
 
-    public function __construct(EntityManager $em, $container)
+    public function __construct(ManagerRegistry $managerRegistry, $container)
     {
-        $this->em = $em;
+        $this->em = $managerRegistry->getManager();
         $this->container = $container;
         $this->client = new Client('http://127.0.0.1:8000/app_dev.php/api/v1/p/');
     }
