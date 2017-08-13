@@ -19,7 +19,7 @@ namespace CampaignChain\Operation\SocialMediaBundle\Job;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
 use CampaignChain\CoreBundle\Job\JobActionInterface;
-use Guzzle\Http\Client;
+use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
 class SocialMediaSchedule implements JobActionInterface
@@ -34,7 +34,9 @@ class SocialMediaSchedule implements JobActionInterface
     {
         $this->em = $managerRegistry->getManager();
         $this->container = $container;
-        $this->client = new Client('http://127.0.0.1:8000/app_dev.php/api/v1/p/');
+        $this->client = new Client([
+            'base_uri' => 'http://127.0.0.1:8000/app_dev.php/api/v1/p/'
+        ]);
     }
 
     public function execute($operationId)
@@ -79,14 +81,14 @@ class SocialMediaSchedule implements JobActionInterface
     public function post($uri, $body)
     {
         try {
-            $request = $this->client->post(
+            $response = $this->client->post(
                 $uri,
                 array(
                     'headers' => array('Content-Type' => 'application/json'),
                     'body' => json_encode($body),
                 )
             );
-            dump($request->getResponseBody());
+            dump($response->getBody());
             exit;
         } catch (RequestException $e) {
             echo $e->getRequest() . "\n";
