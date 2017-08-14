@@ -7,6 +7,5 @@ assetic:
             inputs:
                 - '@CampaignChainOperationSocialMediaBundle/Resources/public/css/social_media_schedule.css'
 twig:
-    form:
-        resources:
-            - 'CampaignChainOperationSocialMediaBundle:Form:fields.html.twig'
+    form_themes:
+        - 'CampaignChainOperationSocialMediaBundle:Form:fields.html.twig'
