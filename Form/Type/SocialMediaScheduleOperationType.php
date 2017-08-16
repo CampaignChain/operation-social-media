@@ -52,8 +52,8 @@ class SocialMediaScheduleOperationType extends OperationType
                         ->setParameter('twitter_bundle', 'campaignchain/channel-twitter')
                         ->setParameter('linkedin_bundle', 'campaignchain/channel-linkedin');
                 },
-                'property' => 'name',
-                'empty_value' => 'Select a Location',
+                'choice_label' => 'name',
+                'placeholder' => 'Select a Location',
                 'empty_data' => null,
                 'attr' => array(
                     'show_image' => true,
