@@ -83,7 +83,7 @@ class SocialMediaScheduleOperationType extends OperationType
         $resolver->setDefaults($defaults);
     }
 
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'campaignchain_operation_social_media_schedule';
     }
