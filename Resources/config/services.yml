@@ -11,3 +11,10 @@ services:
     campaignchain.operation.social_media.schedule:
         class: CampaignChain\Operation\SocialMediaBundle\EntityService\SocialMediaSchedule
         arguments: [ '@doctrine' ]
+    campaignchain.operation.social_media.form.type.schedule:
+        class: CampaignChain\Operation\SocialMediaBundle\Form\Type\SocialMediaScheduleOperationType
+        arguments:
+            - '@doctrine'
+            - '@service_container'
+        tags:
+            - { name: form.type }
