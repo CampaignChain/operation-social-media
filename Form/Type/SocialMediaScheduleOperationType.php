@@ -12,6 +12,8 @@ class SocialMediaScheduleOperationType extends OperationType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $this->setOptions($options);
+
         $builder
             ->add('locations', 'entity', array(
                 'label' => false,
@@ -73,13 +75,12 @@ class SocialMediaScheduleOperationType extends OperationType
 
     public function configureOptions(OptionsResolver $resolver)
     {
+        parent::configureOptions($resolver);
+
         $defaults = array(
             'data_class' => 'CampaignChain\Operation\SocialMediaBundle\Entity\SocialMediaSchedule',
         );
 
-        if($this->content){
-            $defaults['data'] = $this->content;
-        }
         $resolver->setDefaults($defaults);
     }
 
